@@ -1,0 +1,36 @@
+{% extends "appFood/base.html" %}
+{% block content %}
+
+<div class="content">
+  <h1 class='detail name'>{{recipe.recipe_name}}</h1>
+  <h2>Directions</h2>
+  <h2 class='item list'>{{recipe.directions|safe|linebreaks}}</h2>
+
+    <a class='btn btn-info' href="{% url 'ingredient_new' %}">Add New Ingredient</a>
+    <a class='btn btn-info' href="{% url 'storage_decrease' pk=recipe.pk %}">Use this Recipe?</a>
+    <h3>If recipe is used, ingredients listed below will be decreased in storage.</h3>
+
+  <p></p>
+
+  {% for ingredient in recipe.ingredients.all %}
+  <div class="item">
+      <h3><a href="{% url 'ingredient_detail' pk=ingredient.pk %}">{{ ingredient.ingredient_name }}</a></h3>
+  </div>
+
+    <hr>
+    {% empty %}
+    <li>No Objects yet</li>
+  {% endfor %}
+
+  <a class='btn btn-primary' href="{% url 'recipe_edit' pk=recipe.pk %}">
+    <span class="fa fa-pencil">  Edit  </span>
+  </a>
+  <a class='btn btn-primary' href="{% url 'recipe_remove' pk=recipe.pk %}">
+    <span class="fa fa-remove">  Delete  </span>
+  </a>
+  <a class='btn btn-primary' href="{% url 'recipe_list' %}">
+    <span class="fa fa-arrow-left">  Back to Recipes  </span>
+  </a>
+</div>
+
+{% endblock %}

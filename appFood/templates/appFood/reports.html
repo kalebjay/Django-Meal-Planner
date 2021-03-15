@@ -1,0 +1,15 @@
+{% extends 'appFood/base.html' %}
+{% block content %}
+
+  <div class="content">
+    <h1>Reports</h1>
+    <a class='btn btn-info' href="{% url 'top_items' %}">Top 10 Storage Items Used</a>
+    <a class='btn btn-info' href="{% url 'top_ingred' %}">Top 10 Ingredients Used in Recipes</a>
+    <a class='btn btn-info' href="{% url 'recipe_by_category' %}">Recipes by Category Type</a>
+
+    <div class="content">
+      <p>The reports genearted will show various information related to your data</p>
+    </div>
+  </div>
+
+{% endblock %}

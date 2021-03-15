@@ -1,0 +1,40 @@
+{% extends 'appFood/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="content">
+
+  <div class="title">
+    <h1>Welcome!</h1>
+    <h2>Ready to meal plan?</h2>
+  </div>
+
+  <div class="sidebyside">
+    <div class="image">
+      <img src="{% static '/images/bacon.jpg' %}" alt="Bacon">
+    </div>
+  </div>
+  <div class="sidebyside">
+    <div class="image">
+      <img src="{% static '/images/fastfood.jpg' %}" alt="fastfood">
+    </div>
+  </div>
+  <div class="sidebyside">
+    <div class="image">
+      <img src="{% static '/images/cake.jpg' %}" alt="cake">
+    </div>
+  </div>
+  <div class="sidebyside">
+    <div class="image">
+      <img src="{% static '/images/salad.jpg' %}" alt="salad">
+    </div>
+  </div>
+  <div class="sidebyside">
+    <div class="image">
+      <img src="{% static '/images/guacomole.jpg' %}" alt="guacomole">
+    </div>
+  </div>
+
+</div>
+
+{% endblock %}

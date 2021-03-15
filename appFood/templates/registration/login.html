@@ -1,0 +1,20 @@
+{% extends 'appFood/base.html' %}
+{% block content %}
+
+  <div class="content">
+
+    <h2>User Login: </h2>
+    <h3>(Please check with admin for any issues.)</h3>
+    {% if form.errors %}
+        <p>Your username and password didn't match. Please try again!</p>
+    {% endif %}
+
+    <form method="POST" action="{% url 'login' %}">
+    {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" class='btn btn-primary' value="Login" />
+        <input type="hidden" name="next" value="{{ next }}" />
+    </form>
+  </div>
+
+{% endblock %}

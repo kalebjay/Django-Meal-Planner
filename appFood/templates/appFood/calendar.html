@@ -1,0 +1,14 @@
+{% extends 'appFood/base.html' %}
+{% block content %}
+
+  <div class="content">
+    <h1 class='title'>Calendar</h1>
+    <a class="btn btn-info left" href="{% url 'calendar' %}?{{ prev_month }}"> Previous Month </a>
+    <a class="btn btn-info left" href="{% url 'recommendedRecipes' %}?{{ prev_month }}"> Recommend Recipes </a>
+    <a class="btn btn-info right" href="{% url 'calendar' %}?{{ next_month }}"> Next Month </a>
+    <a class="btn btn-info right" href="{% url 'meal_new' %}"> Add Meal </a>
+  </div>
+
+  {{ calendar }}
+
+{% endblock %}

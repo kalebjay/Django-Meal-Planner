@@ -1,0 +1,29 @@
+{% extends "appFood/base.html" %}
+{% block content %}
+
+<div class="content">
+  <h1 class='detail name'>{{storageitem.item_name}}</h1>
+  <h2 class='item list'>{{storageitem.storage_type}} - Storage Type:</h2>
+  {% if storageitem.storage_type == 1 %}
+    <h3>- Pantry (room temp)</h3>
+  {% elif storageitem.storage_type == 2 %}
+    <h3>- Fridge</h3>
+  {% elif storageitem.storage_type == 3 %}
+    <h3>- Freezer</h3>
+  {% endif %}
+  <h2 class='item list'>{{storageitem.container_type}} - Container Type</h2>
+  <h2 class='item list'>{{storageitem.quant_onHand}} - Quntity of item on hand</h2>
+  <h2 class='item list'>{{storageitem.quant_amount}} - Percent of item available</h2>
+
+  <a class='btn btn-primary' href="{% url 'storageitem_edit' pk=storageitem.pk %}">
+    <span class="fa fa-pencil">  Edit  </span>
+  </a>
+  <a class='btn btn-primary' href="{% url 'storageitem_remove' pk=storageitem.pk %}">
+    <span class="fa fa-remove">  Delete  </span>
+  </a>
+  <a class='btn btn-primary' href="{% url 'storageitem_list' %}">
+    <span class="fa fa-arrow-left">  Back to Storage  </span>
+  </a>
+</div>
+
+{% endblock %}

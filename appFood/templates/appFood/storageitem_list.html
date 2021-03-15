@@ -1,0 +1,54 @@
+{% extends "appFood/base.html" %}
+{% block content %}
+
+<div class="content">
+  <div class="center">
+    <h1>Storage Items</h1>
+      <a class='btn btn-info' href="{% url 'storageitem_new' %}">Add New Item</a>
+      <a class='btn btn-info' href="{% url 'shopping_list' %}">Get Shopping List</a>
+  </div>
+
+<p></p>
+
+  <div class="sidebyside">
+    <h2>Pantry</h2>
+    {% for item in storageitem_list %}
+    <div class='clearfix'>
+      {% if item.storage_type == 1 %}
+        <h3><a href="{% url 'storageitem_detail' pk=item.pk %}">{{ item.item_name }}</a></h3>
+      {% endif %}
+    </div>
+    {% empty %}
+    <li>No Objects yet</li>
+    {% endfor %}
+  </div>
+
+  <div class="sidebyside">
+    <h2>Fridge</h2>
+    {% for item in storageitem_list %}
+    <div class='clearfix'>
+      {% if item.storage_type == 2 %}
+        <h3><a href="{% url 'storageitem_detail' pk=item.pk %}">{{ item.item_name }}</a></h3>
+      {% endif %}
+    </div>
+    {% empty %}
+    <li>No Objects yet</li>
+    {% endfor %}
+  </div>
+
+  <div class="sidebyside">
+    <h2>Freezer</h2>
+    {% for item in storageitem_list %}
+    <div class='clearfix'>
+      {% if item.storage_type == 3 %}
+        <h3><a href="{% url 'storageitem_detail' pk=item.pk %}">{{ item.item_name }}</a></h3>
+      {% endif %}
+    </div>
+    {% empty %}
+    <li>No Objects yet</li>
+    {% endfor %}
+  </div>
+
+</div>
+
+{% endblock %}

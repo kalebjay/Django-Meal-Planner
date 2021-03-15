@@ -1,0 +1,23 @@
+{% extends "appFood/base.html" %}
+{% block content %}
+
+<div class="content">
+  <h1>Recipes</h1>
+
+    <a class='btn btn-info' href="{% url 'recipe_new' %}">Add New Recipe</a>
+    <a class='btn btn-info' href="{% url 'ingredient_list' %}">Manage Ingredients</a>
+
+  <p></p>
+
+  {% for recipe in recipe_list %}
+  <div class="item">
+      <h3><a href="{% url 'recipe_detail' pk=recipe.pk %}">{{ recipe.recipe_name }}</a></h3>
+  </div>
+
+    <hr>
+    {% empty %}
+    <li>No Objects yet</li>
+  {% endfor %}
+</div>
+
+{% endblock %}

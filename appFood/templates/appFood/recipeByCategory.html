@@ -1,0 +1,44 @@
+{% extends 'appFood/base.html' %}
+{% block content %}
+
+<div class="center">
+  <div class="content">
+    <h1>Recipe By Catergory</h1>
+    <a class='btn btn-info' href="{% url 'top_items' %}">Top 10 Storage Items Used</a>
+    <a class='btn btn-info' href="{% url 'top_ingred' %}">Top 10 Ingredients Used in Recipes</a>
+
+    <div id="container" style="width: 75%;">
+      <canvas id="pie-chart"></canvas>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+    <script>
+
+    var config = {
+      type: 'pie',
+      data: {
+        datasets: [{
+          data: {{ data|safe }},
+          backgroundColor: [
+            '#1566c2', '#56fc03', '#db970f', '#d8db0f', '#db0f94', '#039c6b'
+          ],
+          label: 'Catergory'
+        }],
+        labels: {{ labels|safe }}
+      },
+      options: {
+        responsive: true
+      }
+    };
+
+    window.onload = function() {
+      var ctx = document.getElementById('pie-chart').getContext('2d');
+      window.myPie = new Chart(ctx, config);
+    };
+
+  </script>
+
+  </div>
+</div>
+
+{% endblock %}

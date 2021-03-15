@@ -1,0 +1,17 @@
+{% extends "appFood/base.html" %}
+{% block content %}
+
+<div class="content">
+  <a class='btn btn-primary' href="{% url 'storageitem_list' %}">Back</a>
+</div>
+<div class="content">
+  <h1>Shopping List</h1>
+
+  {% for item in shoppingList %}
+    {{item.item_name}}<br>
+    {{item.ingredient_name}}<br>
+  {% endfor %}
+
+</div>
+
+{% endblock %}
