@@ -1,27 +1,25 @@
-argon2-cffi==20.1.0
-asgiref @ file:///tmp/build/80754af9/asgiref_1605055780383/work
-bcrypt==3.2.0
-certifi==2020.12.5
-cffi==1.14.4
-dj-database-url==0.5.0
-Django @ file:///tmp/build/80754af9/django_1609784082548/work
-django-db-logger==0.1.10
-django-filter==2.4.0
-django-heroku==0.3.1
-django-report-builder==6.4.2
-djangorestframework==3.12.2
-et-xmlfile==1.0.1
-Faker==5.4.0
-jdcal==1.4.1
-Markdown==3.3.4
-openpyxl==3.0.6
-Pillow==8.1.0
-psycopg2 @ file:///C:/ci/psycopg2_1608147654043/work
-pycparser==2.20
-python-dateutil==2.8.1
-pytz @ file:///tmp/build/80754af9/pytz_1608922264688/work
-six==1.15.0
-sqlparse @ file:///tmp/build/80754af9/sqlparse_1602184451250/work
-text-unidecode==1.3
-whitenoise==5.2.0
-wincertstore==0.2
+argon2-cffi
+asgiref
+bcrypt
+certifi
+cffi
+dj-database-url
+Django
+django-db-logger
+django-filter
+django-heroku
+django-report-builder
+djangorestframework
+et-xmlfile
+Faker
+jdcal
+Markdown
+openpyxl
+Pillow
+pycparser
+python-dateutil
+pytz
+six
+sqlparse
+text-unidecode
+whitenoise
